@@ -14,7 +14,8 @@ class Neuron473871592:
             
         Note: if name is not specified, Neuron473871592_instance is used instead
         '''
-        
+                
+        self._name = name
         # load the morphology
         from load_swc import load_swc
         load_swc('Rbp4-Cre_KL100_Ai14_IVSCC_-175331.06.01.01_469953750_m.swc', self,
@@ -31,8 +32,7 @@ class Neuron473871592:
         self.axon[0].connect(self.soma[0](0.5))
         self.axon[1].connect(self.axon[0](1))
         self.all += self.axon
-        
-        self._name = name
+
         self._insert_mechanisms()
         self._discretize_model()
         self._set_mechanism_parameters()
